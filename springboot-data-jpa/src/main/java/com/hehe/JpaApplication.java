@@ -11,13 +11,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories("com.hehe.repository")
 public class JpaApplication {
 
-	//解决JPA因为懒加载导致JSON转换错误的问题
-	@Bean
-	public ObjectMapper objectMapper() {
-		return new ObjectMapper().disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
-	}
+    //解决JPA因为懒加载导致JSON转换错误的问题
+    @Bean
+    public ObjectMapper objectMapper() {
+        return new ObjectMapper().disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(JpaApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(JpaApplication.class, args);
+    }
 }
